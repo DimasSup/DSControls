@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'DSControls_Example' do
+  pod 'DSControls', :path => '../'
+
+  target 'DSControls_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
