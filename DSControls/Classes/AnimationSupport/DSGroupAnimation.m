@@ -14,6 +14,7 @@
 	CFTimeInterval maxDuration = [[_animations valueForKeyPath:@"@max.fullDuration"] doubleValue];
 	self.animation.duration = maxDuration;
 	
+	
 }
 -(CAAnimationGroup *)animation{
 	CAAnimationGroup* group = [super animation];

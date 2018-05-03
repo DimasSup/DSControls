@@ -9,4 +9,5 @@
 
 @interface DSAnimationSequence : DSBaseAnimation
 @property(nonatomic,strong)NSArray<__kindof DSBaseAnimation*>* animations;
++(instancetype)sequenceWithAnimations:(DSBaseAnimation*)animations,... NS_REQUIRES_NIL_TERMINATION;
 @end
