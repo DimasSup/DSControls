@@ -1,0 +1,20 @@
+PODS:
+  - DSControls (0.1.0):
+    - DSControls/Animations (= 0.1.0)
+    - DSControls/Controls (= 0.1.0)
+  - DSControls/Animations (0.1.0)
+  - DSControls/Controls (0.1.0)
+
+DEPENDENCIES:
+  - DSControls (from `../`)
+
+EXTERNAL SOURCES:
+  DSControls:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DSControls: 987b2b30b9a0939ae0a76fad298f746c57ed1209
+
+PODFILE CHECKSUM: 75aa54b298623a3b03b54c149df417582e485518
+
+COCOAPODS: 1.5.0
