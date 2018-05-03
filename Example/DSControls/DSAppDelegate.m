@@ -14,6 +14,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	
+	DSGroupAnimation* group = [DSGroupAnimation groupWithAnimations:[DSPropertyAnimation animationForKey:@"alpha" fromValue:@(0) toValue:@(1) withDuration:10],[DSPropertyAnimation animationForKey:@"frame" fromValue:@(0) toValue:@(1) withDuration:2], nil];
+	
+	DSAnimationSequence* animation = [DSAnimationSequence new];
+	
+	animation.animations = @[group,[DSPropertyAnimation animationForKey:@"fram" fromValue:@(30) toValue:@(100) withDuration:40]];
+	
+	NSArray* anims = [animation flatAnimations:CACurrentMediaTime()];
+	if(anims.count>0){
+		
+	}
 	
 	
 	
