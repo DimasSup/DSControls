@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		07C408E3C3ED5EE63F1B599A /* Pods_DSControls_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE7204AC457F2F9F1B5B9C2 /* Pods_DSControls_Tests.framework */; };
+		4AD03353209A93AD009A979E /* DSControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD03352209A93AD009A979E /* DSControls.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		15A4E569462CB4192F77BD99 /* Pods-DSControls_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSControls_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DSControls_Tests/Pods-DSControls_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		4AD03352209A93AD009A979E /* DSControls.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DSControls.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* DSControls_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSControls_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -57,12 +59,12 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		6CD87443F169581F3AA3AB97 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		70F8F694B476AD5244BD177A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		6CD87443F169581F3AA3AB97 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		70F8F694B476AD5244BD177A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CD9DEC6B7449B5DD6928C28 /* Pods-DSControls_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSControls_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DSControls_Example/Pods-DSControls_Example.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B3F00030C29753AB43E409A6 /* DSControls.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = DSControls.podspec; path = ../DSControls.podspec; sourceTree = "<group>"; };
+		B3F00030C29753AB43E409A6 /* DSControls.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DSControls.podspec; path = ../DSControls.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BBF314F0E99F201E9DD30C08 /* Pods-DSControls_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSControls_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DSControls_Tests/Pods-DSControls_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD7C92D776647A323E4B0397 /* Pods_DSControls_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DSControls_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEE7204AC457F2F9F1B5B9C2 /* Pods_DSControls_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DSControls_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AD03353209A93AD009A979E /* DSControls.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
@@ -119,6 +122,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4AD03352209A93AD009A979E /* DSControls.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -207,7 +211,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				32D92B464843604FA91FD371 /* [CP] Embed Pods Frameworks */,
+				565FFC94E50362C676E8BA13 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,6 +251,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = DimasSup;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 722L35642Y;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -312,7 +319,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		32D92B464843604FA91FD371 /* [CP] Embed Pods Frameworks */ = {
+		565FFC94E50362C676E8BA13 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -485,6 +492,7 @@
 			baseConfigurationReference = FD3555998FEFE762682FC961 /* Pods-DSControls_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 722L35642Y;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DSControls/DSControls-Prefix.pch";
 				INFOPLIST_FILE = "DSControls/DSControls-Info.plist";
@@ -500,6 +508,7 @@
 			baseConfigurationReference = 7CD9DEC6B7449B5DD6928C28 /* Pods-DSControls_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 722L35642Y;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DSControls/DSControls-Prefix.pch";
 				INFOPLIST_FILE = "DSControls/DSControls-Info.plist";

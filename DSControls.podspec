@@ -31,12 +31,23 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'DSControls/Classes/**/*'
+  s.frameworks = 'UIKit'
+  
+  s.subspec 'Animations' do |anims|
+	  anims.source_files   = 'DSControls/Classes/{AnimationSupport}/**/*'
+	  anims.public_header_files = 'HPManagedObjects/Classes/{AnimationSupport}/*.h'
+  end
+  
+  s.subspec 'Controls' do |controls|
+	  controls.source_files   = 'HPManagedObjects/Classes/{Controls}/**/*'
+	  controls.public_header_files = 'HPManagedObjects/Classes/{Controls}/**/*.h'
+  end
   
   # s.resource_bundles = {
   #   'DSControls' => ['DSControls/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  
   # s.dependency 'AFNetworking', '~> 2.3'
 end
