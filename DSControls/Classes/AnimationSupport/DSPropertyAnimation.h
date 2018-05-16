@@ -11,6 +11,7 @@
 -(instancetype)initWithObject:(__kindof CAPropertyAnimation *)animation;
 @property(nonatomic,strong)__kindof CAPropertyAnimation* animation;
 
+
 +(instancetype)animationForKey:(NSString*)key fromValue:(id)from toValue:(id)to withDuration:(CFTimeInterval)duration;
 
 @end

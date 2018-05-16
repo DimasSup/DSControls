@@ -7,6 +7,9 @@
 
 #import "DSPropertyAnimation.h"
 
+#define DSAGroup(anim,...) [DSGroupAnimation groupWithAnimations: anim,## __VA_ARGS__]
+
+
 @interface DSGroupAnimation : DSCoreAnimation
 @property(nonatomic,readonly,strong)CAAnimationGroup* animation;
 @property(nonatomic,copy)NSArray<DSBaseAnimation*>* animations;

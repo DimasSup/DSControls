@@ -20,6 +20,11 @@
 	CAAnimationGroup* group = [super animation];
 	if(!group){
 		group = self.animation = [[CAAnimationGroup alloc] init];
+		group.delegate = self;
+		group.fillMode = kCAFillModeForwards;
+		group.removedOnCompletion = NO;
+		group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+		
 	}
 	return group;
 }
@@ -32,7 +37,7 @@
 	NSMutableArray<CAAnimation*>* animations = [NSMutableArray new];
 	
 	for (DSBaseAnimation* animation in self.animations) {
-		[animations addObjectsFromArray: [animation flatAnimations:self.animation.beginTime]];
+		[animations addObjectsFromArray: [animation flatAnimations:0]];
 	}
 	self.animation.animations = animations;
 	

@@ -35,12 +35,12 @@ TODO: Add long description of the pod here.
   
   s.subspec 'Animations' do |anims|
 	  anims.source_files   = 'DSControls/Classes/{AnimationSupport}/**/*'
-	  anims.public_header_files = 'HPManagedObjects/Classes/{AnimationSupport}/*.h'
+	  anims.public_header_files = 'DSControls/Classes/{AnimationSupport}/*.h'
   end
   
   s.subspec 'Controls' do |controls|
-	  controls.source_files   = 'HPManagedObjects/Classes/{Controls}/**/*'
-	  controls.public_header_files = 'HPManagedObjects/Classes/{Controls}/**/*.h'
+	  controls.source_files   = 'DSControls/Classes/{Controls}/**/*'
+	  controls.public_header_files = 'DSControls/Classes/{Controls}/**/*.h'
   end
   
   # s.resource_bundles = {

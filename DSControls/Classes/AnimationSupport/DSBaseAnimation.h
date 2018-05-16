@@ -19,5 +19,5 @@
 -(NSArray<__kindof CAAnimation*>*)flatAnimations:(CFTimeInterval)time;
 
 
-+(__kindof CAAnimation*)runAnimation:(__kindof DSBaseAnimation *)animation onLayer:(CALayer *)layer withKey:(NSString *)animationKey;
++(void)runAnimation:(__kindof DSBaseAnimation *)animation onLayer:(CALayer *)layer withKey:(NSString *)animationKey;
 @end

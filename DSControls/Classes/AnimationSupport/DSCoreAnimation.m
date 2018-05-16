@@ -8,7 +8,7 @@
 #import "DSCoreAnimation.h"
 #import "DSBaseAnimation+Private.h"
 
-@interface DSCoreAnimation()<CAAnimationDelegate>
+@interface DSCoreAnimation()
 
 @end
 
