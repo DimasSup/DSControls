@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet DSValuePager *valuePager;
 
 @property (weak, nonatomic) IBOutlet UIView *targetView;
+@property (weak, nonatomic) IBOutlet UILabel *label1;
 
 @end
 
@@ -31,13 +32,21 @@
 	self.valuePager.layer.borderColor = UIColor.blackColor.CGColor;
 	self.valuePager.layer.borderWidth = 1;
 	
-	DSVASequence(DSVAnimation(5,^(){
+	
+	[self.valuePager pushAnimationToStack:DSVASequence(DSVAnimation(5,^(){
 		self.targetView.frame = CGRectMake(200, 200, 50, 50);
 	},^(BOOL finished){
 		NSLog(@"Finished 1");
 	}),DSVAnimation(5,^{self.targetView.alpha = 0;},^(BOOL finished){
 		NSLog(@"finished 2");
-	}),nil).run;
+	}),nil)];
+	
+	[self.valuePager pushAnimationToStack:DSVAnimation_Simple(4, ^{
+		self.targetView.alpha = 1;
+		self.targetView.backgroundColor = [UIColor greenColor];
+	}, ^(BOOL val){
+		
+	})];
 	
 	
 	
@@ -71,9 +80,21 @@
 -(NSUInteger)DS_valuePagerNumberOfRows:(DSValuePager *)pager{
 	return 30;
 }
-
+static int val = 0;
 - (IBAction)sliderValueChanged:(UISlider*)sender {
 	[self.valuePager setupSelectedValue:(NSUInteger)sender.value animated:YES];
+	if(val!=(int)sender.value){
+		val = (int)sender.value;
+		int tv = val;
+		NSString* value = [NSString stringWithFormat:@"%i",val];
+		[self.label1 pushAnimationToStack:DSVAnimation_Simple(0.2, ^{
+			self.label1.text = value;
+			self.label1.frame = CGRectMake(tv*15, 400, 200, 40);
+		}, ^(BOOL finished){
+			
+			
+		})];
+	}
 }
 
 @end

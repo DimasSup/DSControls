@@ -6,7 +6,7 @@
 //
 
 #import "DSViewBaseAnimation.h"
-
+#import "DSBaseAnimation+Private.h"
 @implementation DSViewBaseAnimation
-
+@synthesize onPrivateComplete;
 @end

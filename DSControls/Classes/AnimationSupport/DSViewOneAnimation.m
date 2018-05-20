@@ -6,6 +6,7 @@
 //
 
 #import "DSViewOneAnimation.h"
+#import "DSBaseAnimation+Private.h"
 
 @interface DSViewOneAnimation()
 @property(nonatomic,assign)BOOL isRun;
@@ -41,13 +42,16 @@
 	if(self.useSpring){
 		[UIView animateWithDuration:self.duration delay:self.delay usingSpringWithDamping:self.springDamping initialSpringVelocity:self.springVelocity options:self.options animations:self.animation completion:^(BOOL finished) {
 			self.isRun = NO;
+			if(self.onPrivateComplete)self.onPrivateComplete(finished);
 			if(self.orignalFinishBlock) self.orignalFinishBlock(finished);
+			
 			if(self.onFinish)self.onFinish(finished);
 		}];
 	}
 	else{
 		[UIView animateWithDuration:self.duration delay:self.delay options:self.options animations:self.animation completion:^(BOOL finished) {
 			self.isRun = NO;
+			if(self.onPrivateComplete)self.onPrivateComplete(finished);
 			if(self.orignalFinishBlock) self.orignalFinishBlock(finished);
 			if(self.onFinish)self.onFinish(finished);
 		}];

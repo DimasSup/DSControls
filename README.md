@@ -5,9 +5,13 @@
 [![License](https://img.shields.io/cocoapods/l/DSControls.svg?style=flat)](https://cocoapods.org/pods/DSControls)
 [![Platform](https://img.shields.io/cocoapods/p/DSControls.svg?style=flat)](https://cocoapods.org/pods/DSControls)
 
+## Documentation
+
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
 
 ## Requirements
 

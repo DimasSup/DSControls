@@ -6,7 +6,10 @@
 //
 
 #import "DSBaseAnimation.h"
-
+#import "DSViewBaseAnimation.h"
 @interface DSBaseAnimation ()
+@property(nonatomic,copy)DSCompleteAnimationBlock onPrivateComplete;
+@end
+@interface DSViewBaseAnimation ()
 @property(nonatomic,copy)DSCompleteAnimationBlock onPrivateComplete;
 @end

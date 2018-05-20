@@ -6,6 +6,7 @@
 //
 
 #import "DSViewAnimationSequence.h"
+#import "DSBaseAnimation+Private.h"
 @interface DSViewAnimationSequence()
 {
 	NSMutableArray<__kindof DSViewBaseAnimation*>* _animations;
@@ -54,6 +55,7 @@
 -(void)runAnimationByIndex:(NSInteger)index{
 	if(index>=self.animations.count){
 		self.isRun = NO;
+		if(self.onPrivateComplete)self.onPrivateComplete(YES);
 		if(self.onFinish){
 			self.onFinish(YES);
 		}
@@ -61,9 +63,9 @@
 	}
 	DSViewBaseAnimation* animation = self.animations[index];
 	__weak typeof(animation) weakAnim = animation;
-	animation.onFinish = ^(BOOL success) {
+	animation.onPrivateComplete = ^(BOOL success) {
 		[self runAnimationByIndex:index+1];
-		weakAnim.onFinish = nil;
+		weakAnim.onPrivateComplete = nil;
 	};
 	[animation run];
 }

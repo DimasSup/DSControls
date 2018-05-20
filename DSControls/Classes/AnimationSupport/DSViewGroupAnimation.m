@@ -6,6 +6,7 @@
 //
 
 #import "DSViewGroupAnimation.h"
+#import "DSBaseAnimation+Private.h"
 
 @interface DSViewGroupAnimation()
 {
@@ -55,10 +56,11 @@
 	}
 	__weak typeof (maxanim) weakAnim = maxanim;
 	
-	maxanim.onFinish = ^(BOOL success) {
+	maxanim.onPrivateComplete = ^(BOOL success) {
 		self.isRun = NO;
+		if(self.onPrivateComplete)self.onPrivateComplete(success);
 		if(self.onFinish)self.onFinish(YES);
-		weakAnim.onFinish = nil;
+		weakAnim.onPrivateComplete = nil;
 	};
 	[self.animations makeObjectsPerformSelector:@selector(run)];
 }
