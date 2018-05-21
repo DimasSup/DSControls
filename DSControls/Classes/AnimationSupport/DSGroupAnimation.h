@@ -11,7 +11,7 @@
 
 
 @interface DSGroupAnimation : DSCoreAnimation
-@property(nonatomic,readonly,strong)CAAnimationGroup* animation;
+@property(nonatomic,strong)__kindof CAAnimationGroup* animation;
 @property(nonatomic,copy)NSArray<DSBaseAnimation*>* animations;
 
 +(instancetype)groupWithAnimations:(DSBaseAnimation*)animations,... NS_REQUIRES_NIL_TERMINATION;

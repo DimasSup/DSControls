@@ -9,4 +9,7 @@
 #import "DSBaseAnimation+Private.h"
 @implementation DSViewBaseAnimation
 @synthesize onPrivateComplete;
+-(void)run{
+	
+}
 @end

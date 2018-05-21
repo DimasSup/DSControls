@@ -8,6 +8,7 @@
 #import "DSGroupAnimation.h"
 
 @implementation DSGroupAnimation
+
 -(void)setAnimations:(NSArray<DSBaseAnimation *> *)animations{
 	_animations = [animations copy];
 	

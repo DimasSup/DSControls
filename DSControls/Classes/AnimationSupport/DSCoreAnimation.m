@@ -13,6 +13,7 @@
 @end
 
 @implementation DSCoreAnimation
+
 - (instancetype)init
 {
 	self = [super init];

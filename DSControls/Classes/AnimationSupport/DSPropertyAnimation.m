@@ -11,6 +11,13 @@
 @end
 
 @implementation DSPropertyAnimation
+- (instancetype)initWithObject:(__kindof CAPropertyAnimation *)animation{
+	self = [self init];
+	if(self){
+		self.animation = animation;
+	}
+	return self;
+}
 -(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
 	[super animationDidStop:anim finished:flag];
 }
