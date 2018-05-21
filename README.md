@@ -56,7 +56,8 @@ or with class method :
 +(DSViewAnimationSequence*)sequenceWithAnimations:(__kindof DSViewBaseAnimation*)animations,... NS_REQUIRES_NIL_TERMINATION;
 ```
 After create animation you can run it with instance method _[animation run]_
-*NOTE: you can add __DSViewOneAnimation__ , __DSViewAnimationSequence__ and __DSViewGroupAnimation__ as animation in sequence*
+
+* NOTE: you can add __DSViewOneAnimation__ , __DSViewAnimationSequence__ and __DSViewGroupAnimation__ as animation in sequence *
 
 
 #### **DSViewGroupAnimation** 
@@ -75,6 +76,7 @@ or with class method :
 +(DSViewGroupAnimation *)groupWithAnimations:(__kindof DSViewBaseAnimation *)animations, ... NS_REQUIRES_NIL_TERMINATION;
 ```
 After create animation you can run it with instance method _[animation run]_
+
 *NOTE: you can add __DSViewOneAnimation__ , __DSViewAnimationSequence__ and __DSViewGroupAnimation__ as animation in group*
 
 #### **DSViewAnimationStack** 
@@ -96,7 +98,9 @@ Add animation to stack:
 ```objective-c
 [DSViewAnimationsStack -(void)pushAnimation:(__kindof DSViewBaseAnimation*)animation];
 ```
+
 *NOTE: Animations in stacks start immediately after add to stack if there are no active animation*
+
 *NOTE: you can add __DSViewOneAnimation__ , __DSViewAnimationSequence__ and __DSViewGroupAnimation__ as animation in group*
 
 ### CALayerAnimations
