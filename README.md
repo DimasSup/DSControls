@@ -7,6 +7,22 @@
 
 ## Documentation
 
+### UIView animations
+**DSViewOneAnimation** - one animation block item
+```objective-c
+DSVAnimation(0.4,^{
+view.alpha = 0;
+},^(BOOL finished){}).run;
+```
+
+
+**DSViewAnimationSequence**  - animations sequence, do all animations one by one. Callback will be called when all animations will be finished.
+**DSViewGroupAnimation** - animations group. Run all animations in same time. Callback will be called when a longest animation will be finished ( * NOTE: longest animation calculated by __animation.fullDuration__ * )
+
+**DSViewAnimationStack** - run animations one by one, First IN First OUT.
+
+
+### CALayerAnimations
 
 ## Example
 
