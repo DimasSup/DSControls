@@ -8,7 +8,9 @@
 ## Documentation
 
 ### UIView animations
-**DSViewOneAnimation** - one animation block item
+#### **DSViewOneAnimation** 
+One animation block item
+
 ```objective-c DSVAnimation_Delay(duration,action,finish_block)
 DSVAnimation(0.4,^{
 view.alpha = 0;
@@ -39,7 +41,8 @@ After create animation you can run it with instance method _[animation run]_
 
 
 
-**DSViewAnimationSequence**  - animations sequence, do all animations one by one. Callback will be called when all animations will be finished.
+#### **DSViewAnimationSequence**  
+Animations sequence, do all animations one by one. Callback will be called when all animations will be finished.
 Add animations to sequence with instance method:
 ```objective-c
 -(void)addAnimation:(__kindof DSViewBaseAnimation*)anim;
@@ -56,7 +59,8 @@ After create animation you can run it with instance method _[animation run]_
 *NOTE: you can add __DSViewOneAnimation__ , __DSViewAnimationSequence__ and __DSViewGroupAnimation__ as animation in sequence*
 
 
-**DSViewGroupAnimation** - animations group. Run all animations in same time. Callback will be called when a longest animation will be finished ( * NOTE: longest animation calculated by __animation.fullDuration__ * )
+#### **DSViewGroupAnimation** 
+Animations group. Run all animations in same time. Callback will be called when a longest animation will be finished ( * NOTE: longest animation calculated by __animation.fullDuration__ * )
 
 Add animations to sequence with instance method:
 ```objective-c
@@ -73,7 +77,8 @@ or with class method :
 After create animation you can run it with instance method _[animation run]_
 *NOTE: you can add __DSViewOneAnimation__ , __DSViewAnimationSequence__ and __DSViewGroupAnimation__ as animation in group*
 
-**DSViewAnimationStack** - run animations one by one, First IN First OUT.
+#### **DSViewAnimationStack** 
+Run animations one by one, First IN First OUT.
 You can create it manualy or get instance for each UIView with instance method:
 ```objective-c
 [UIView -(DSViewAnimationsStack*)defaultAnimationsStack];
