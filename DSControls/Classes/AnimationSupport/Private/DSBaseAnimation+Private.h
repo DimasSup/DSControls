@@ -12,4 +12,6 @@
 @end
 @interface DSViewBaseAnimation ()
 @property(nonatomic,copy)DSCompleteAnimationBlock onPrivateComplete;
+@property(nonatomic,assign,readwrite)BOOL isRun;
+@property(nonatomic,assign,readwrite)BOOL isCanceled;
 @end

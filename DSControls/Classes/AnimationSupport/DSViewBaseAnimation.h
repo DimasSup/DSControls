@@ -9,7 +9,10 @@
 #import "DSAnimationCommon.h"
 @interface DSViewBaseAnimation : NSObject
 @property(nonatomic,assign,readonly)BOOL isRun;
+@property(nonatomic,assign,readonly)BOOL isCanceled;
+
 @property(nonatomic,assign,readonly)NSTimeInterval fullDuration;
 @property(nonatomic,copy)DSCompleteAnimationBlock onFinish;
 -(void)run;
+-(void)cancel;
 @end

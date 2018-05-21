@@ -11,11 +11,11 @@
 {
 	NSMutableArray<__kindof DSViewBaseAnimation*>* _animations;
 }
-@property(nonatomic,assign)BOOL isRun;
+
+
 @end
 
 @implementation DSViewAnimationSequence
-@synthesize isRun = _isRun;
 @synthesize animations = _animations;
 
 - (instancetype)init
@@ -53,18 +53,17 @@
 	
 }
 -(void)runAnimationByIndex:(NSInteger)index{
-	if(index>=self.animations.count){
+	if(index>=self.animations.count || self.isCanceled){
 		self.isRun = NO;
-		if(self.onPrivateComplete)self.onPrivateComplete(YES);
-		if(self.onFinish){
-			self.onFinish(YES);
-		}
+		BOOL isFinished = index!=(NSIntegerMax-1);
+		if(self.onPrivateComplete)self.onPrivateComplete((isFinished && !self.isCanceled));
+		if(self.onFinish) self.onFinish((isFinished && !self.isCanceled));
 		return;
 	}
 	DSViewBaseAnimation* animation = self.animations[index];
 	__weak typeof(animation) weakAnim = animation;
 	animation.onPrivateComplete = ^(BOOL success) {
-		[self runAnimationByIndex:index+1];
+		[self runAnimationByIndex:success?(index+1):NSIntegerMax-1];
 		weakAnim.onPrivateComplete = nil;
 	};
 	[animation run];

@@ -9,11 +9,12 @@
 #import "DSBaseAnimation+Private.h"
 
 @interface DSViewOneAnimation()
-@property(nonatomic,assign)BOOL isRun;
+
 @end
 
 @implementation DSViewOneAnimation
-@synthesize isRun = _isRun;
+
+
 -(NSTimeInterval)fullDuration{
 	return self.duration+self.delay;
 }
@@ -36,6 +37,13 @@
 	}
 	if(self.isRun)
 		return;
+	if(self.isCanceled){
+		if(self.onPrivateComplete)self.onPrivateComplete(NO);
+		if(self.orignalFinishBlock) self.orignalFinishBlock(NO);
+		if(self.onFinish)self.onFinish(NO);
+		return;
+	}
+	
 	self.isRun = YES;
 	
 	

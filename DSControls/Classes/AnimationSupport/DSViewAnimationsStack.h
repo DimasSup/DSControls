@@ -11,7 +11,8 @@
 @interface DSViewAnimationsStack : NSObject
 
 @property(nonatomic,assign,readonly)BOOL isRun;
-
+-(void)stop;
+-(void)run;
 @property(nonatomic,strong)DSCompleteAnimationBlock onFinishAll;
 @property(nonatomic,strong)DSCompleteAnimationBlock onFinishOne;
 

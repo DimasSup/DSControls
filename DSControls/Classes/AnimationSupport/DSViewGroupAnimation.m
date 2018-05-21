@@ -12,11 +12,10 @@
 {
 	NSMutableArray<DSViewBaseAnimation*>* _animations;
 }
-@property(nonatomic,assign,readwrite)BOOL isRun;
+
 @end;
 
 @implementation DSViewGroupAnimation
-@synthesize isRun = _isRun;
 @synthesize animations = _animations;
 - (instancetype)init
 {
@@ -46,6 +45,11 @@
 	}
 	if(self.isRun)
 		return;
+	if(self.isCanceled){
+		if(self.onPrivateComplete)self.onPrivateComplete(NO);
+		if(self.onFinish)self.onFinish(NO);
+		return;
+	}
 	self.isRun = YES;
 	DSViewBaseAnimation* maxanim = nil;
 	NSTimeInterval maxtime = 0;
@@ -59,7 +63,7 @@
 	maxanim.onPrivateComplete = ^(BOOL success) {
 		self.isRun = NO;
 		if(self.onPrivateComplete)self.onPrivateComplete(success);
-		if(self.onFinish)self.onFinish(YES);
+		if(self.onFinish)self.onFinish(success);
 		weakAnim.onPrivateComplete = nil;
 	};
 	[self.animations makeObjectsPerformSelector:@selector(run)];

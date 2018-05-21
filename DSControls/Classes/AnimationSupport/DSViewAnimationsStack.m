@@ -12,6 +12,8 @@
 @interface DSViewAnimationsStack()
 @property(nonatomic,strong)NSMutableArray<DSViewBaseAnimation*>* animations;
 @property(nonatomic,assign,readwrite)BOOL isRun;
+@property(nonatomic,assign)BOOL inCancelMode;
+
 @end
 
 @implementation DSViewAnimationsStack
@@ -31,6 +33,20 @@
 	
 	[self runNextAnimation];
 }
+-(void)stop{
+	if(self.isRun){
+		@synchronized(self.animations){
+			if([self.animations firstObject].isRun){
+				[self.animations.firstObject cancel];
+			}
+		}
+	}
+	self.inCancelMode = YES;
+}
+-(void)run{
+	[self runNextAnimation];
+}
+
 -(void)runNextAnimation{
 	if(![NSThread isMainThread]){
 		[self performSelectorOnMainThread:@selector(runNextAnimation) withObject:nil waitUntilDone:NO];
@@ -61,10 +77,14 @@
 						[weakSelf.animations removeObjectAtIndex:index];
 					}
 				}
+				BOOL inCancelMode = weakSelf.inCancelMode;
 				weakSelf.isRun = NO;
 				if(weakSelf.onFinishOne)weakSelf.onFinishOne(success);
 				dispatch_async(dispatch_get_main_queue(), ^{
-					[weakSelf runNextAnimation];
+					weakSelf.inCancelMode = NO;
+					if(!inCancelMode){
+						[weakSelf runNextAnimation];
+					}
 				});
 				
 				

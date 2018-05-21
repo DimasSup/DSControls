@@ -12,4 +12,7 @@
 -(void)run{
 	
 }
+-(void)cancel{
+	self.isCanceled = YES;
+}
 @end
