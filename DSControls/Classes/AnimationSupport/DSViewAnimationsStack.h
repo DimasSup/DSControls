@@ -15,11 +15,11 @@
 @property(nonatomic,strong)DSCompleteAnimationBlock onFinishAll;
 @property(nonatomic,strong)DSCompleteAnimationBlock onFinishOne;
 
--(void)pushAnimation:(DSViewBaseAnimation*)animation;
+-(void)pushAnimation:(__kindof DSViewBaseAnimation*)animation;
 @end
 
 @interface UIView(DSViewAnimations)
 -(DSViewAnimationsStack*)defaultAnimationsStack;
--(void)pushAnimationToStack:(DSViewBaseAnimation*)animation;
+-(void)pushAnimationToStack:(__kindof DSViewBaseAnimation*)animation;
 +(DSViewAnimationsStack*)animationsStackForView:(UIView*)view withName:(NSString*)name;
 @end

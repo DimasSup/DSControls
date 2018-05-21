@@ -12,13 +12,21 @@
 
 @class DSViewOneAnimation;
 
+
+#define DSVAnimation_Delay(duration,wait,options,action,finish) [DSViewOneAnimation animationWithDuration:duration delay:wait animationOptions:options actionBlock:action finishBlock:finish]
+
 #define DSVAnimation_Simple(duration,action,finish) [DSViewOneAnimation animationWithDuration:duration actionBlock:action finishBlock:finish]
-#define DSVAnimation_Delay(duration,delay,options,action,finish) [DSViewOneAnimation animationWithDuration:duration delay:delay animationOptions:options actionBlock:action finishBlock:finish]
-#define DSVAnimation_Full(duration,delay,options,damping,velocity,action,finish) [DSViewOneAnimation animationWithDuration:duration delay:delay animationOptions:options springDamping:damping springVelocity:velocity actionBlock:action finishBlock:finish]
+
+
+
+#define DSVAnimation_Full(duration,wait,options,damping,velocity,action,finish) [DSViewOneAnimation animationWithDuration:duration delay:wait animationOptions:options springDamping:damping springVelocity:velocity actionBlock:action finishBlock:finish]
 
 #define DSVAnimation( ... ) VA_SELECT( DSVAnimation, __VA_ARGS__ )
+
 #define DSVAnimation_3( duration, action,finish ) DSVAnimation_Simple(duration,action,finish)
-#define DSVAnimation_5( duration,delay,options,action,finish ) DSVAnimation_Delay(duration,delay,options,action,finish)
+
+#define DSVAnimation_5( duration,delay,options,action,finish ) DSVAnimation_Delay( duration,delay,options,action,finish )
+
 #define DSVAnimation_7( duration,delay,options,damping,velocity,action,finish) DSVAnimation_Full(duration,delay,options,damping,velocity,action,finish)
 
 

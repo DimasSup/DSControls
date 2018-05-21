@@ -7,7 +7,7 @@
 
 #import "DSViewBaseAnimation.h"
 
-#define DSVASequence(anim,...) [DSViewAnimationSequence sequenceWithAnimations: anim,## __VA_ARGS__]
+#define DSVASequence(animation,...) [DSViewAnimationSequence sequenceWithAnimations: animation,## __VA_ARGS__]
 
 
 @interface DSViewAnimationSequence : DSViewBaseAnimation
