@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DSControls'
-  s.version          = '0.9.0'
+  s.version          = '0.9.1'
   s.summary          = 'iOS UIView/CALayer Animations Sequence, Groups and Stacks'
 
 # This description is used to generate tags and improve search results.
